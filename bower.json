@@ -1,0 +1,33 @@
+{
+  "name": "js-plugin-example",
+  "description": "",
+  "main": "",
+  "authors": [
+    "lupeng@macbook <pengloo53@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pengloo53/js-plugin-example",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "datatables.net-buttons-bs": "^1.5.3",
+    "datatables.net-responsive": "^2.2.3",
+    "datatables.net-responsive-bs": "^2.2.3",
+    "datatables.net-select-bs": "^1.2.7",
+    "x-editable": "^1.5.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-table": "^1.12.1",
+    "jquery-validation": "^1.14.0",
+    "jszip": "^3.1.5",
+    "pdfmake": "^0.1.38",
+    "tableexport.jquery.plugin": "^1.10.1",
+    "markcell/jquery-tabledit": "jquery-tabledit#^1.2.3"
+  }
+}

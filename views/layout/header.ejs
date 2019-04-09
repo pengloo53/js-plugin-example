@@ -1,0 +1,47 @@
+<div class="layout-header">
+  <nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">js-plugin-example</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown <%= url=='table'?'active':'' %>">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表格插件 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <!-- <li><a href="#">Action</a></li> -->
+                    <li class="disabled"><a href="javascript:void(0)">在线表格插件</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class=""><a href="/bootstrap-table">bootstrap-table</a></li>
+                    <li class=""><a href="/datatables">datatables</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown <%= url=='jquery'?'active':'' %>">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery 相关 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <!-- <li><a href="#">Action</a></li> -->
+                    <li class="disabled"><a href="javascript:void(0)">jQuery 相关插件</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class=""><a href="/jquery-tabledit">jquery-tabledit</a></li>
+                    <li class=""><a href="/jquery-validation">jquery-validation</a></li>
+                    <!-- <li class=""><a href="/bootstrap-table">bootstrap-table</a></li>
+                    <li class=""><a href="/datatables">datatables</a></li> -->
+                  </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <p class="lead"><a href="<%= link %>" target="_blank"><%= title %></a> <span style="font-size: 0.6em">点击标题查看官方文档</small></p>
+</div>
