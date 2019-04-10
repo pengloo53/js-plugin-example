@@ -124,13 +124,13 @@
     <script src="/tableexport.jquery.plugin/tableExport.min.js"></script>
     <!-- booststrap-table editable -->
     <script src="/bootstrap-table/dist/extensions/editable/bootstrap-table-editable.js"></script>
-    <script src="/X-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script src="/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
     <script>
       $(function(){
         var $table = $('#table');
         $table.bootstrapTable({
-            url: '/data/test.data',
+            url: '/bootstrap-table/data',
             classes: 'table table-bordered table-striped',
             toolbar: '#toolbar',
             queryParams: function(params){
@@ -146,12 +146,15 @@
             paginationLoopz: true,
             search: true,
             idField: 'name',
+            showPaginationSwitch: true,
             showColumns: true,
             showExport: true,
             showRefresh: true,
-            // showToggle: true,
-            // cardView: true,
+            showToggle: true,
             detailView: true,
+            detailFormatter: function(index, row, element){
+              return 'there is something at index ' + index ;
+            },
             columns: [{
                 field: 'id',
                 title: 'ID'
@@ -165,11 +168,11 @@
                 field: 'column1',
                 title: '列1',
                 editable: {
-                  url: '/bootstrapTable/edit',
+                  url: '/bootstrap-table/edit',
                   type: 'select',
                   // value: 1,
                   source: [
-                    {value: 1, text: 'C 10'},
+                    {value: 'C 10', text: 'Default'},
                     {value: 2, text: 'Active'},
                     {value: 3, text: 'Blocked'},
                     {value: 4, text: 'Deleted'}
@@ -179,7 +182,7 @@
                 field: 'column2',
                 title: '列2',
                 editable: {
-                  url: '/bootstrapTable/edit',
+                  url: '/bootstrap-table/edit',
                 },
             },{
                 field: 'column3',
