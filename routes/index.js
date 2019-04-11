@@ -15,6 +15,9 @@ module.exports = function(app){
   app.use('/jquery-tabledit', require('./jquery/jquery-tabledit.js'));
   app.use('/jquery-validation', require('./jquery/jquery-validation.js'));
 
+  // bootstrap
+  app.use('/bootstrap-datepicker', require('./bootstrap/bootstrap-datepicker.js'));
+  app.use('/bootstrap-daterangepicker', require('./bootstrap/bootstrap-daterangepicker.js'));
 };
 
 

@@ -28,6 +28,8 @@
     "jszip": "^3.1.5",
     "pdfmake": "^0.1.38",
     "tableexport.jquery.plugin": "^1.10.1",
-    "markcell/jquery-tabledit": "jquery-tabledit#^1.2.3"
+    "jquery-tabledit": "jquery-tabledit#^1.2.3",
+    "daterangepicker": "bootstrap-daterangepicker#^3.0.3",
+    "bootstrap-datepicker": "^1.8.0"
   }
 }

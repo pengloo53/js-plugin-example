@@ -6,6 +6,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- custom -->
     <link rel='stylesheet' href='/stylesheets/style.css'>
   </head>
@@ -14,46 +16,48 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
-          <form role="form" action="#" method="POST" id="webconfig">
+          <form role="form" action="#" method="POST" id="form">
             <div class="box-body">
               <div class="row">
-                <div class="form-group has-feedback col-lg-6">
-                  <label for="title">标题</label><b class="text-danger"> *</b>
-                  <input type="title" class="form-control" name="title" placeholder="企业标题" required="true">
+                <div class="form-group col-lg-6">
+                  <label for="startDate" class="control-label">开始日期</label>
+                  <input type="text" class="form-control date" name="start_date" autocomplete="off" placeholder="这里使用了日期选择器：bootstrap-datepicker" required="true">
                 </div>
                 <div class="form-group col-lg-6">
-                  <label for="url">URL</label><b class="text-danger"> *</b>
-                  <input type="text" class="form-control" name="url" placeholder="Footer处展示" required="true">
+                  <label for="startDate" class="control-label">结束日期</label>
+                  <input type="text" class="form-control date" name="end_date" autocomplete="off" placeholder="这里使用了日期选择器：bootstrap-datepicker"  required="true">
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="desc">描述</label>
-                <textarea rows="3" class="form-control" name="desc" placeholder="描述" maxlength="200"></textarea>
-                <p class="help-block">描述不超过200字符</p>
               </div>
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="register">是否启用注册</label>
-                  <div class="radio">
-                    <label class="radio-inline">
-                      <input type="radio" name="register" value=1 > 开启
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="register" value=0 > 关闭
-                    </label>
-                  </div>
+                  <label for="city" class="control-label">城市</label>
+                  <select class="form-control" name="city" required>
+                    <option value="">选择城市</option>
+                    <option value="北京">北京</option>
+                  </select>
                 </div>
                 <div class="form-group col-lg-6">
-                  <label for="verifier">是否启用验证码</label>
-                  <div class="radio">
-                    <label class="radio-inline">
-                      <input type="radio" name="verifier" value=1 > 开启
-                    </label>
-                    <label class="radio-inline">
-                      <input type="radio" name="verifier" value=0 > 关闭
-                    </label>
-                  </div>
+                  <label for="place" class="control-label">地点</label>
+                  <select name="place" class="form-control" required>
+                    <option value="">选择地点</option>
+                    <option value="香格里拉酒店">香格里拉酒店</option>
+                  </select>
                 </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="" class="control-label">运营负责人</label>
+                  <input type="text" name="operator" class="form-control" required maxlength="10">
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="owner" class="control-label">项目负责人</label>
+                  <input type="text" name="owner" class="form-control" required maxlength="10">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-12">
+                  <label for="bz" class="control-label">备注</label>
+                  <textarea name="p_bz" rows="2" class="form-control" placeholder="备注特殊信息"></textarea>
               </div>
             </div>
             <!-- /.box-body -->
@@ -73,12 +77,56 @@
     <!-- jquery-validation -->
     <script src="/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/jquery-validation/dist/localization/messages_zh.js"></script>
-
+    <!-- bootstrap datepicker -->
+    <script src="/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script>
-      $('form').validate({
+    $(function(){
+      // 自定义验证方法：结束日期 >= 开始日期
+      $.validator.methods.compareDate = function(value, element, param) {
+          var startDate = jQuery(param).val();
+          var date1 = new Date(Date.parse(startDate.replace("-", "/")));
+          var date2 = new Date(Date.parse(value.replace("-", "/")));
+          return date1 <= date2;
+      };
+      // 表单验证
+      $('#form').validate({
         errorClass: 'text-danger',
         errorElement: 'em',
+        rules: {
+          end_date: {
+            required: true,
+            compareDate: 'input[name=start_date]'
+          },
+        },
+        focusInvalid: false,
+        messages: {
+          end_date: {
+            compareDate: '结束日期必须大于开始日期'
+          }
+        },
+        submitHandler: function(form){
+          return false;
+        }
       });
+      // 日期选择框
+      $('input.date').datepicker({
+        format: "yyyy/mm/dd",
+        weekStart: 7,
+        maxViewMode: 2,
+        language: "zh-CN",
+        // daysOfWeekDisabled: "0,6",
+        // daysOfWeekHighlighted: "0,6",
+        autoclose: true,
+        todayHighlight: true,
+      }).on('show', function (e) {
+        e.preventDefault();
+        e.stopPropagation(); // 禁止触发父元素事件
+      }).on('hide', function (e) {
+        $(this).blur();
+        e.stopPropagation(); // 禁止触发父元素事件
+      });
+    });
     </script>
   </body>
 </html>
