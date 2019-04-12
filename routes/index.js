@@ -2,8 +2,8 @@ module.exports = function(app){
   app.get('/', function(req, res, next) {
     res.render('index', {
         url: '',
-        title: 'Example',
-        link: ''
+        title: '文档库',
+        link: 'https://www.yuque.com/pengloo53/web'
     });
   });
 

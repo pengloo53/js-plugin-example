@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-    <!-- custom -->
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-  </head>
-  <body>
-    <% include ./layout/header.ejs %>
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="/img/chat1.jpeg" alt="" width="100%">
-                    <img src="/img/chat2.jpg" alt="" width="100%">
-                </div>
-                <div class="col-lg-6">
-                    <img src="/img/chat.jpeg" alt="" width="100%">
-                </div>
-            </div>
-        </div>
+
+<head>
+  <title><%= title %></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <!-- custom -->
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+
+<body>
+  <% include ./layout/header.ejs %>
+  <div class="container">
+    <p>Web 前端插件文档库示例代码，文档库地址：<a href="https://www.yuque.com/pengloo53/web">https://www.yuque.com/pengloo53/web</a></p>
+    <br>
+    <p><h4>介绍</h4></p>
+    <br>
+    <p>如今，随着大前端的发展，曾经的霸主：jQuery 也渐渐的陨落，随之一起没落的，也包含基于 jQuery 的一些优秀的插件。这些优秀的插件，让我们在前端的开发中，节省了大量的时间。自己的项目中也使用了大部分基于 jQuery
+      的前端插件，帮助我实现了很多的功能，节省了大量的开发时间。</p>
+    <br>
+    <p>所以，我计划发起一个开源项目，整理并收集这些优秀的前端插件的使用方法，并提供示例代码，可供调试和学习。一来为了留个存档，二来也是为了分享出去，帮助到需要的人。当然，我希望你也能跟我一起维护这个文档，让它帮助到更多的人。</p>
+    <br>
+    <p><b><i>该文档起于 js 框架，但是不止于 js，希望能整理所有的 Web 前端框架。</i></b></p>
+    <br>
+    <ul>
+      <li>如果有兴趣可以一起维护文档，文档协作邀请链接：<a
+          href="https://www.yuque.com/g/pengloo53/web/collaborator/join?token=rMudjrT0PjYZv8BR">https://www.yuque.com/g/pengloo53/web/collaborator/join?token=rMudjrT0PjYZv8BR</a>
+      </li>
+      <li>为了文档的可用性，我希望每一个插件都有一篇独立的介绍文档，以及独立的页面演示。该 repo 就是在线演示的源代码，repo 地址：<a
+          href="https://github.com/pengloo53/js-plugin-example">pengloo53/js-plugin-example</a>
+      </li>
+      <li>在线演示地址：<a href="http://js.90byte.com">http://js.90byte.com</a>
+      </li>
+    </ul>
+    <br>
+    <p><h4>部署</h4></p>
+    <br>
+    <ol start="1">
+      <li>安装 Node 环境
+      </li>
+      <li>安装 supervisor，安装方法：<code class='code-inline'>npm i -g supervisor</code>
+      </li>
+      <li>安装 bower 包管理器，安装方法：<code class='code-inline'>npm i -g bower</code>
+      </li>
+      <li>克隆代码到本地，顺便点个 Star
+      </li>
+      <li>进入项目目录，安装依赖，<code class='code-inline'>npm install</code> 以及 <code class='code-inline'>bower install</code>
+      </li>
+      <li>运行项目，<code class='code-inline'>npm start</code>
+      </li>
+      <li>浏览器打开项目：<a href="http://localhost:3030">http://localhost:3030</a>
+      </li>
+    </ol>
     <script src="/jquery/dist/jquery.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
+</body>
+
 </html>
