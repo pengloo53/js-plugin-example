@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <!-- daterangepicker -->
+    <link rel="stylesheet" href="/daterangepicker/daterangepicker.css">
+    <!-- custom -->
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+  </head>
+  <body>
+    <% include ../layout/header.ejs %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <form role="form" action="#" method="POST" id="webconfig">
+            <div class="box-body">
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="date">input 样式</label>
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                      <input type="text" class="form-control input-sm daterange" name="date" placeholder="" autocomplete="off" required>
+                  </div>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="date">button 样式</label>
+                  <div class="input-group">
+                    <button type="button" class="btn btn-default btn-sm daterange" data-toggle="tooltip" title="项目开始日期">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                      <span>时间</span>
+                      <i class="glyphicon glyphicon-triangle-bottom"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery 3 -->
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- moment  -->
+    <script src="/moment/min/moment.min.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="/daterangepicker/daterangepicker.js"></script>
+
+    <script>
+      $(function(){
+        // dateRange 参数
+        function dateRangeConfig(startDate, endDate) {
+          return {
+            startDate: startDate,
+            endDate: endDate,
+            timePicker: true,
+            // minDate: '2018/12',
+            // maxDate: moment().format('YYYY/MM/DD'),
+            // showDropdowns: true,
+            // autoApply: true,
+            ranges: {
+                '近两月': [moment().subtract(1, 'M').startOf('M'), moment().endOf('M')],
+                '本月': [moment().startOf('month'), moment().endOf('month')],
+                '上月': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+                '本季度': [moment().startOf('Q'), moment().endOf('Q')],
+                '上季度': [moment().subtract(1, 'Q').startOf('Q'), moment().subtract(1, 'Q').endOf('Q')],
+                '今年': [moment().startOf('Y'), moment().endOf('Y')],
+                '去年': [moment().subtract(1, 'Y').startOf('Y'), moment().subtract(1, 'Y').endOf('Y')],
+            },
+            locale: {
+                format: 'YYYY/MM/DD',
+                applyLabel: "应用",
+                cancelLabel: "取消",
+                customRangeLabel: "自定义",
+                daysOfWeek: ["日", "一", "二", "三", "四", "五", "六"],
+                monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+            }
+          }
+        }
+        var $btnDateRange = $('button.daterange');
+        var $inputDateRange = $('input.daterange');
+        // 定义默认开始日期 以及 结束日期
+        var startDate = moment().subtract(1, 'month').startOf('month').format('YYYY/MM/DD'); // 默认近两月;
+        var endDate = moment().endOf('month').format('YYYY/MM/DD'); // 默认月底;
+        // 初始化 button 标签
+        $btnDateRange.find('span').html(startDate + ' - ' + endDate);
+        // button 类型 daterangepicker
+        $btnDateRange.daterangepicker(dateRangeConfig(startDate, endDate), function (start, end) {
+          $btnDateRange.find('span').html(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+          startDate = start.format('YYYY/MM/DD');
+          endDate = end.format('YYYY/MM/DD');
+          // 选择后，触发动作
+          alert('You slected ' + startDate + ' - ' + endDate);
+        });
+        // input 类型 daterangepicker
+        $inputDateRange.daterangepicker(dateRangeConfig(startDate, endDate), function (start, end) {
+          $inputDateRange.find('span').html(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+          startDate = start.format('YYYY/MM/DD');
+          endDate = end.format('YYYY/MM/DD');
+          // 选择后，触发动作
+          alert('You slected ' + startDate + ' - ' + endDate);
+        });
+      });
+    </script>
+  </body>
+</html>

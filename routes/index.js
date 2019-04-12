@@ -7,17 +7,11 @@ module.exports = function(app){
     });
   });
 
-  // table
-  app.use('/bootstrap-table', require('./table/bootstrap-table.js'));
-  app.use('/datatables', require('./table/datatables.js'));
+  // page
+  app.use('/page', require('./page.js'));
 
-  // jquery
-  app.use('/jquery-tabledit', require('./jquery/jquery-tabledit.js'));
-  app.use('/jquery-validation', require('./jquery/jquery-validation.js'));
-
-  // bootstrap
-  app.use('/bootstrap-datepicker', require('./bootstrap/bootstrap-datepicker.js'));
-  app.use('/bootstrap-daterangepicker', require('./bootstrap/bootstrap-daterangepicker.js'));
+  // ajax request
+  app.use('/ajax', require('./ajax.js'));
 };
 
 

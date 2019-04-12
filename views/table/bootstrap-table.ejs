@@ -117,20 +117,20 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- bootstrap-table -->
-    <script src="/bootstrap-table/dist/bootstrap-table.js"></script>
-    <script src="/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script src="/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
     <!-- bootstrap-table export -->
     <script src="/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
     <script src="/tableexport.jquery.plugin/tableExport.min.js"></script>
     <!-- booststrap-table editable -->
-    <script src="/bootstrap-table/dist/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="/bootstrap-table/dist/extensions/editable/bootstrap-table-editable.min.js"></script>
     <script src="/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
     <script>
       $(function(){
         var $table = $('#table');
         $table.bootstrapTable({
-            url: '/bootstrap-table/data',
+            url: '/ajax/bootstrap-table/data',
             classes: 'table table-hover table-bordered table-striped text-nowrap',
             toolbar: '#toolbar',
             queryParams: function(params){
@@ -168,7 +168,7 @@
                 field: 'column1',
                 title: '列1',
                 editable: {
-                  url: '/bootstrap-table/edit',
+                  url: '/ajax/bootstrap-table/edit',
                   type: 'select',
                   // value: 1,
                   source: [
@@ -182,7 +182,7 @@
                 field: 'column2',
                 title: '列2',
                 editable: {
-                  url: '/bootstrap-table/edit',
+                  url: '/ajax/bootstrap-table/edit',
                 },
             },{
                 field: 'column3',

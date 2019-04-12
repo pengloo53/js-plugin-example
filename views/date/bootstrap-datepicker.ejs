@@ -20,7 +20,7 @@
             <div class="box-body">
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="date">日期 <i class="fa fa-question-circle-o" data-toggle="tooltip" data-placement="top" title="填写授课日期，自动判断是否周末"></i></label>
+                  <label for="date" class="control-label">日期 </label>
                   <input type="text" class="form-control date" name="date" placeholder="" autocomplete="off" required>
                   <p class="help-block">查看官方示例：<a href="https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=false&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&keyboardNavigation=on&forceParse=on#sandbox" target="_blank">请点击</a></p>
                 </div>
@@ -50,7 +50,7 @@
         autoclose: true,
         todayHighlight: true,
         // startDate: new Date(),
-        endDate: new Date()
+        // endDate: new Date()
       }).on('show', function (e) {
         e.preventDefault();
         e.stopPropagation(); // 禁止触发父元素事件

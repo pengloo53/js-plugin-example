@@ -15,40 +15,39 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="dropdown <%= url=='table'?'active':'' %>">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表格插件 <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <!-- <li><a href="#">Action</a></li> -->
-                    <li class="disabled"><a href="javascript:void(0)">在线表格插件</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class=""><a href="/bootstrap-table">bootstrap-table</a></li>
-                    <li class=""><a href="/datatables">datatables</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown <%= url=='jquery'?'active':'' %>">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery 相关 <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <!-- <li><a href="#">Action</a></li> -->
-                    <li class="disabled"><a href="javascript:void(0)">jQuery 相关插件</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class=""><a href="/jquery-tabledit">jquery-tabledit</a></li>
-                    <li class=""><a href="/jquery-validation">jquery-validation</a></li>
-                    <!-- <li class=""><a href="/bootstrap-table">bootstrap-table</a></li>
-                    <li class=""><a href="/datatables">datatables</a></li> -->
-                  </ul>
-                </li>
-                <li class="dropdown <%= url=='bootstrap'?'active':'' %>">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">bootstrap 相关 <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <!-- <li><a href="#">Action</a></li> -->
-                    <li class="disabled"><a href="javascript:void(0)">bootstrap 相关插件</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class=""><a href="/bootstrap-datepicker">bootstrap-datepicker</a></li>
-                    <!-- <li class=""><a href="/bootstrap-daterangepicker">bootstrap-daterangepicker</a></li> -->
-                    <!-- <li class=""><a href="/bootstrap-table">bootstrap-table</a></li>
-                    <li class=""><a href="/datatables">datatables</a></li> -->
-                  </ul>
-                </li>
+              <li class="dropdown <%= url=='table'?'active':'' %>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表格插件 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="#">Action</a></li> -->
+                  <li class="disabled"><a href="javascript:void(0)">在线表格</a></li>
+                  <li class=""><a href="/page/bootstrap-table">bootstrap-table</a></li>
+                  <li class=""><a href="/page/datatables">datatables</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="disabled"><a href="javascript:void(0)">表格辅助</a></li>
+                  <li class=""><a href="/page/jquery-tabledit">jquery-tabledit</a></li>
+                </ul>
+              </li>
+              <li class="dropdown <%= url=='date'?'active':'' %>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">日期插件 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class="disabled"><a href="javascript:void(0)">日期选择</a></li>
+                  <li class=""><a href="/page/bootstrap-datepicker">bootstrap-datepicker</a></li>
+                  <li class=""><a href="/page/daterangepicker">daterangepicker</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="disabled"><a href="javascript:void(0)">日期库</a></li>
+                  <li class=""><a href="/page/moment">moment</a></li>
+                  <!-- <li class=""><a href="/page/"></a></li> -->
+                </ul>
+              </li>
+              <li class="dropdown <%= url=='jquery'?'active':'' %>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery 相关 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="#">Action</a></li> -->
+                  <li class="disabled"><a href="javascript:void(0)">校验</a></li>
+                  <li class=""><a href="/page/jquery-validation">jquery-validation</a></li>
+                  <!-- <li role="separator" class="divider"></li> -->
+                </ul>
+              </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>
