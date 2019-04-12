@@ -8,12 +8,24 @@ var router = express.Router();
 /**
  *  Table
  */
+
+// page 首页
+router.get('/', function(req, res, next){
+    res.render('page', {
+        url: '',
+        title: '目录',
+        link: '/',
+        linkDesc: '点击回到首页'
+    });
+});
+
 // bootstrap-table
 router.get("/bootstrap-table", function(req, res, next) {
     res.render("table/bootstrap-table", {
         url: "table",
         title: "bootstrap-table",
-        link: "https://bootstrap-table.com/"
+        link: "https://bootstrap-table.com/",
+        linkDesc: '点击查看官方文档'
     });
 });
 
@@ -22,7 +34,8 @@ router.get("/datatables", function(req, res, next) {
     res.render("table/datatables", {
         url: "table",
         title: "datatables",
-        link: "https://datatables.net/"
+        link: "https://datatables.net/",
+        linkDesc: '点击查看官方文档'
     });
 });
 
@@ -32,6 +45,7 @@ router.get("/jquery-tabledit", function(req, res, next) {
         url: "table",
         title: "jquery-tabledit",
         link: "http://markcell.github.io/jquery-tabledit/",
+        linkDesc: '点击查看官方文档',
         dataList: [
             {
                 id: 1,
@@ -110,7 +124,8 @@ router.get("/jquery-validation", function(req, res, next) {
     res.render("jquery/jquery-validation.ejs", {
         url: "jquery",
         title: "jquery-validation",
-        link: "https://jqueryvalidation.org/"
+        link: "https://jqueryvalidation.org/",
+        linkDesc: '点击查看官方文档'
     });
 });
 
@@ -123,7 +138,8 @@ router.get("/bootstrap-datepicker", function(req, res, next) {
     res.render("date/bootstrap-datepicker", {
         url: "date",
         title: "bootstrap-datepicker",
-        link: "https://bootstrap-datepicker.readthedocs.io/en/latest/"
+        link: "https://bootstrap-datepicker.readthedocs.io/en/latest/",
+        linkDesc: '点击查看官方文档'
     });
 });
 
@@ -132,7 +148,8 @@ router.get("/daterangepicker", function(req, res, next) {
     res.render("date/daterangepicker", {
         url: "date",
         title: "daterangepicker",
-        link: "http://www.daterangepicker.com/#example2"
+        link: "http://www.daterangepicker.com/#example2",
+        linkDesc: '点击查看官方文档'
     });
 });
 
