@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- custom -->
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+
+<body>
+  <% include ../layout/header.ejs %>
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-lg-6">
+        <label for="" class="control-label">搜索</label>
+        <input type="text" name="search" class="form-control" autocomplete="off">
+        <p class="help-block">请输入 0-9 的数字</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-lg-6">
+        <label for="owner" class="control-label">结果</label>
+        <textarea rows="2" name="result" class="form-control"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery 3 -->
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- bootstrap3-typeahead -->
+  <script src="/bootstrap3-typeahead/bootstrap3-typeahead.min.js"></script>
+  <script>
+    $(function () {
+      $("input[name=search]").typeahead({
+        source: function (value, callback) {
+          $.get('/ajax/bootstrap3-typeahead/data', function (data) {
+            // var rData = [];
+            // data.forEach(element => {
+            //   rData.push(element.name + ' - ' + element.price)
+            // });
+            // callback(rData);
+            callback(data);
+          });
+        },
+        updater: function (item) {
+          $('textarea[name=result]').val(JSON.stringify(item));
+        }
+      });
+    });
+  </script>
+  <% include ../layout/footer.ejs %>
+</body>
+
+</html>

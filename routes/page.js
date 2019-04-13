@@ -30,7 +30,7 @@ router.get("/bootstrap-table", function(req, res, next) {
 });
 
 // datatables
-router.get("/datatables", function(req, res, next) {
+router.get("/datatables", function (req, res, next) {
     res.render("table/datatables", {
         url: "table",
         title: "datatables",
@@ -40,7 +40,7 @@ router.get("/datatables", function(req, res, next) {
 });
 
 // jquery-tabledit
-router.get("/jquery-tabledit", function(req, res, next) {
+router.get("/jquery-tabledit", function (req, res, next) {
     res.render("table/jquery-tabledit", {
         url: "table",
         title: "jquery-tabledit",
@@ -115,6 +115,28 @@ router.get("/jquery-tabledit", function(req, res, next) {
     });
 });
 
+/**
+ *  Date
+ */
+// bootstrap-datepicker
+router.get("/bootstrap-datepicker", function (req, res, next) {
+    res.render("date/bootstrap-datepicker", {
+        url: "date",
+        title: "bootstrap-datepicker",
+        official_link: "https://bootstrap-datepicker.readthedocs.io/en/latest/",
+        doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-datepicker"
+    });
+});
+
+// daterangepicker
+router.get("/daterangepicker", function (req, res, next) {
+    res.render("date/daterangepicker", {
+        url: "date",
+        title: "daterangepicker",
+        official_link: "http://www.daterangepicker.com/#example2",
+        doc_link: "https://www.yuque.com/pengloo53/web/daterangepicker"
+    });
+});
 
 /**
  *  jQuery
@@ -128,29 +150,16 @@ router.get("/jquery-validation", function(req, res, next) {
         doc_link: "https://www.yuque.com/pengloo53/web/jquery-validation"
     });
 });
-
-
-/**
- *  Date
- */
-// bootstrap-datepicker
-router.get("/bootstrap-datepicker", function(req, res, next) {
-    res.render("date/bootstrap-datepicker", {
-        url: "date",
-        title: "bootstrap-datepicker",
-        official_link: "https://bootstrap-datepicker.readthedocs.io/en/latest/",
-        doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-datepicker"
+// bootstrap3-typeahead
+router.get('/bootstrap3-typeahead', function(req, res, next){
+    res.render("jquery/bootstrap3-typeahead", {
+        url: "jquery",
+        title: "bootstrap3-typeahead",
+        official_link: "https://github.com/bassjobsen/Bootstrap-3-Typeahead",
+        doc_link: "https://www.yuque.com/pengloo53/web/bootstrap3-typeahead"
     });
 });
 
-// daterangepicker
-router.get("/daterangepicker", function(req, res, next) {
-    res.render("date/daterangepicker", {
-        url: "date",
-        title: "daterangepicker",
-        official_link: "http://www.daterangepicker.com/#example2",
-        doc_link: "https://www.yuque.com/pengloo53/web/daterangepicker"
-    });
-});
+
 
 module.exports = router;

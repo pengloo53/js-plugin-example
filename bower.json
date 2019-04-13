@@ -30,6 +30,7 @@
     "tableexport.jquery.plugin": "^1.10.1",
     "jquery-tabledit": "jquery-tabledit#^1.2.3",
     "daterangepicker": "bootstrap-daterangepicker#^3.0.3",
-    "bootstrap-datepicker": "^1.8.0"
+    "bootstrap-datepicker": "^1.8.0",
+    "bootstrap3-typeahead": "^4.0.2"
   }
 }

@@ -228,4 +228,9 @@ router.get("/datatables/data", function(req, res, next) {
     res.send(data);
 });
 
+// bootstrap3-typeahead
+router.get('/bootstrap3-typeahead/data', function(req, res, next){
+    res.send(data);
+});
+
 module.exports = router;
