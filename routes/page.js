@@ -14,8 +14,8 @@ router.get('/', function(req, res, next){
     res.render('page', {
         url: '',
         title: '目录',
-        link: '/',
-        linkDesc: '点击回到首页'
+        official_link: 'http://js.90byte.com/',
+        doc_link: 'https://www.yuque.com/pengloo53/web'
     });
 });
 
@@ -24,8 +24,8 @@ router.get("/bootstrap-table", function(req, res, next) {
     res.render("table/bootstrap-table", {
         url: "table",
         title: "bootstrap-table",
-        link: "https://bootstrap-table.com/",
-        linkDesc: '点击查看官方文档'
+        official_link: "https://bootstrap-table.com/",
+        doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-table"
     });
 });
 
@@ -34,8 +34,8 @@ router.get("/datatables", function(req, res, next) {
     res.render("table/datatables", {
         url: "table",
         title: "datatables",
-        link: "https://datatables.net/",
-        linkDesc: '点击查看官方文档'
+        official_link: "https://datatables.net/",
+        doc_link: "https://www.yuque.com/pengloo53/web/datatables"
     });
 });
 
@@ -44,8 +44,8 @@ router.get("/jquery-tabledit", function(req, res, next) {
     res.render("table/jquery-tabledit", {
         url: "table",
         title: "jquery-tabledit",
-        link: "http://markcell.github.io/jquery-tabledit/",
-        linkDesc: '点击查看官方文档',
+        official_link: "http://markcell.github.io/jquery-tabledit/",
+        doc_link: "https://www.yuque.com/pengloo53/web/jquery-tabledit",
         dataList: [
             {
                 id: 1,
@@ -124,8 +124,8 @@ router.get("/jquery-validation", function(req, res, next) {
     res.render("jquery/jquery-validation.ejs", {
         url: "jquery",
         title: "jquery-validation",
-        link: "https://jqueryvalidation.org/",
-        linkDesc: '点击查看官方文档'
+        official_link: "https://jqueryvalidation.org/",
+        doc_link: "https://www.yuque.com/pengloo53/web/jquery-validation"
     });
 });
 
@@ -138,8 +138,8 @@ router.get("/bootstrap-datepicker", function(req, res, next) {
     res.render("date/bootstrap-datepicker", {
         url: "date",
         title: "bootstrap-datepicker",
-        link: "https://bootstrap-datepicker.readthedocs.io/en/latest/",
-        linkDesc: '点击查看官方文档'
+        official_link: "https://bootstrap-datepicker.readthedocs.io/en/latest/",
+        doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-datepicker"
     });
 });
 
@@ -148,8 +148,8 @@ router.get("/daterangepicker", function(req, res, next) {
     res.render("date/daterangepicker", {
         url: "date",
         title: "daterangepicker",
-        link: "http://www.daterangepicker.com/#example2",
-        linkDesc: '点击查看官方文档'
+        official_link: "http://www.daterangepicker.com/#example2",
+        doc_link: "https://www.yuque.com/pengloo53/web/daterangepicker"
     });
 });
 
