@@ -159,7 +159,14 @@ router.get('/bootstrap3-typeahead', function(req, res, next){
         doc_link: "https://www.yuque.com/pengloo53/web/bootstrap3-typeahead"
     });
 });
-
-
+// bootstrap-fileinput
+router.get('/bootstrap-fileinput', function (req, res, next) {
+    res.render("jquery/bootstrap-fileinput", {
+        url: "jquery",
+        title: "bootstrap-fileinput",
+        official_link: "http://plugins.krajee.com/file-input",
+        doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-fileinput"
+    });
+});
 
 module.exports = router;

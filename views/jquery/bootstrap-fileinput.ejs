@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+  <!-- bootstrap-fileinput -->
+  <link rel="stylesheet" href="/bootstrap-fileinput/css/fileinput.min.css">
+  <!-- custom -->
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+
+<body>
+  <% include ../layout/header.ejs %>
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-lg-9">
+        <label for="" class="control-label">上传文件</label>
+        <input type="file" name="file" id="file" multiple>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery 3 -->
+  <script src="/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- bootstrap-fileinput -->
+  <script src="/bootstrap-fileinput/js/fileinput.min.js"></script>
+  <script src="/bootstrap-fileinput/js/locales/zh.js"></script>
+
+  <script>
+    $(function () {
+      $('#file').fileinput({
+        language: 'zh',
+        // allowedFileExtensions: ['pdf', 'xlsx', 'docx', 'pptx', 'png', 'jpg', 'html'], // 允许的文件后缀名
+        // allowedFileTypes: ['image', 'html', 'object'],     // 允许的文件类型
+        // showCaption: false,      // 是否显示 input 样式
+        // showPreview: false,      // 是否显示预览
+        // showUpload: false,       // 选择文件后，是否显示上传按钮
+        // maxFileSize: 10,         // 允许最大的文件大小，单位默认为 KB
+        // maxFileCount: 5,         // 允许的文件数量，需要在 input 标签上加 multiple 属性
+        // initialCaption: '',      // 自定义 input 内默认文字
+        // dropZoneTitle: '',       // 预览框文本自定义
+        // browseLabel: '',         // 按钮标签
+        // layoutTemplates: {          // 自定义布局模版，如下调整了按钮的位置以及预览的样式
+        //   main1: '{preview}\n' +
+        //     '<div class="input-group {class}">\n' +
+        //     '   <div class="input-group-btn">\n' +
+        //     '       {browse}\n' +
+        //     '       {remove}\n' +
+        //     '   </div>\n' +
+        //     '   {caption}\n' +
+        //     '</div>',
+        //   preview: '<div class="file-preview {class}">\n' +
+        //     '    <div class="{dropClass}">\n' +
+        //     '    <div class="file-preview-thumbnails">\n' +
+        //     '    </div>\n' +
+        //     '    <div class="clearfix"></div>' +
+        //     '    <div class="file-preview-status text-center text-success"></div>\n' +
+        //     '    <div class="kv-fileinput-error"></div>\n' +
+        //     '    </div>\n' +
+        //     '</div>',
+        //   footer: '<div class="file-thumbnail-footer">\n' +
+        //     '    <div class="file-caption-name" style="width:{width}">{caption}</div>\n' +
+        //     '    {progress} {actions}\n' +
+        //     '</div>',
+        // },
+      });
+    });
+  </script>
+  <% include ../layout/footer.ejs %>
+</body>
+
+</html>
