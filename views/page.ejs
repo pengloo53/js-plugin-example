@@ -1,70 +1,56 @@
-<!DOCTYPE html>
-<html>
+<% include ./layout/head.ejs %>
+<% include ./layout/header.ejs %>
 
-<head>
-  <title><%= title %></title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-  <!-- custom -->
-  <link rel='stylesheet' href='/stylesheets/style.css'>
-
-</head>
-
-<body>
-  <% include ./layout/header.ejs %>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">表格插件</div>
-          <div class="panel-body">
-            <p>包含在线表格，以及表格辅助插件</p>
-          </div>
-          <ul class="list-group">
-            <a class="list-group-item" href="/page/bootstrap-table">bootstrap-table</a>
-            <a class="list-group-item" href="/page/datatables">datatables</a>
-            <a class="list-group-item" href="/page/jquery-tabledit">jquery-tabledit</a>
-          </ul>
-          <div class="panel-footer">敬请期待...</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">表格插件</div>
+        <div class="panel-body">
+          <p>包含在线表格，以及表格辅助插件</p>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">日期插件</div>
-          <div class="panel-body">
-            <p>包含日期选择器，日期库等</p>
-          </div>
-          <ul class="list-group">
-            <a class="list-group-item" href="/page/bootstrap-datepicker">bootstrap-datepicker</a>
-            <a class="list-group-item" href="/page/daterangepicker">daterangepicker</a>
-          </ul>
-          <div class="panel-footer">敬请期待...</div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">其他</div>
-          <div class="panel-body">
-            <p>jQuery & bootstrap 相关插件</p>
-          </div>
-          <ul class="list-group">
-            <a class="list-group-item" href="/page/jquery-validation">jquery-validation</a>
-            <a class="list-group-item" href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a>
-            <a class="list-group-item" href="/page/bootstrap-fileinput">bootstrap-fileinput</a>
-          </ul>
-          <div class="panel-footer">敬请期待...</div>
-        </div>
+        <ul class="list-group">
+          <a class="list-group-item" href="/page/bootstrap-table">bootstrap-table</a>
+          <a class="list-group-item" href="/page/datatables">datatables</a>
+          <a class="list-group-item" href="/page/jquery-tabledit">jquery-tabledit</a>
+        </ul>
+        <div class="panel-footer">敬请期待...</div>
       </div>
     </div>
-
+    <div class="col-lg-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">日期插件</div>
+        <div class="panel-body">
+          <p>包含日期选择器，日期库等</p>
+        </div>
+        <ul class="list-group">
+          <a class="list-group-item" href="/page/bootstrap-datepicker">bootstrap-datepicker</a>
+          <a class="list-group-item" href="/page/daterangepicker">daterangepicker</a>
+        </ul>
+        <div class="panel-footer">敬请期待...</div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">其他</div>
+        <div class="panel-body">
+          <p>jQuery & bootstrap 相关插件</p>
+        </div>
+        <ul class="list-group">
+          <a class="list-group-item" href="/page/jquery-validation">jquery-validation</a>
+          <a class="list-group-item" href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a>
+          <a class="list-group-item" href="/page/bootstrap-fileinput">bootstrap-fileinput</a>
+        </ul>
+        <div class="panel-footer">敬请期待...</div>
+      </div>
+    </div>
   </div>
-  <!-- jQuery 3 -->
-  <script src="/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-  <% include ./layout/footer.ejs %>
-</body>
 
-</html>
+</div>
+<!-- jQuery 3 -->
+<script src="/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<% include ./layout/footer.ejs %>
+<% include ./layout/foot.ejs %>

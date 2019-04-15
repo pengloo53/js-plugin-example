@@ -1,248 +1,237 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Bootstrap table -->
-    <link rel="stylesheet" href="/bootstrap-table/dist/bootstrap-table.min.css">
-    <!-- X-editable -->
-    <link rel="stylesheet" href="/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css">
-    <!-- custom -->
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-  </head>
-  <body>
-    <% include ../layout/header.ejs %>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="toolbar">
-                  <form method="POST" action="javasctip:void(0)" id="Filter" class="form-inline">
-                    <div class="form-group">
-                      <a class="btn btn-sm btn-default" href="#add" data-toggle="modal">
-                          <i class="glyphicon glyphicon-plus"></i>
-                      </a>
-                    </div>
-                    <div class="form-group">
-                      <label class="sr-only" for="filter">Filter</label>
-                      <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
-                        <input type="text" class="form-control input-sm" name="filter" placeholder="筛选条件">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-sm">提交</button>
-                    </div>
-                    <div class="form-group">
-                      <div class="btn-group" id="localFilter">
-                        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          本地筛选 <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)" data-filter="">全部</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0)" data-filter="$1">$1</a></li>
-                            <li><a href="javascript:void(0)" data-filter="$2">$2</a></li>
-                            <li><a href="javascript:void(0)" data-filter="$10">$10</a></li>
-                            <li><a href="javascript:void(0)" data-filter="$20">$20</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </form>
+<% include ../layout/head.ejs %>
+<!-- Bootstrap table -->
+<link rel="stylesheet" href="/bootstrap-table/dist/bootstrap-table.min.css">
+<!-- X-editable -->
+<link rel="stylesheet" href="/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css">
+
+<% include ../layout/header.ejs %>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="toolbar">
+              <form method="POST" action="javasctip:void(0)" id="Filter" class="form-inline">
+                <div class="form-group">
+                  <a class="btn btn-sm btn-default" href="#add" data-toggle="modal">
+                      <i class="glyphicon glyphicon-plus"></i>
+                  </a>
                 </div>
-                <table id="table"></table>
+                <div class="form-group">
+                  <label class="sr-only" for="filter">Filter</label>
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                    <input type="text" class="form-control input-sm" name="filter" placeholder="筛选条件">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-sm">提交</button>
+                </div>
+                <div class="form-group">
+                  <div class="btn-group" id="localFilter">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      本地筛选 <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="javascript:void(0)" data-filter="">全部</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="javascript:void(0)" data-filter="$1">$1</a></li>
+                        <li><a href="javascript:void(0)" data-filter="$2">$2</a></li>
+                        <li><a href="javascript:void(0)" data-filter="$10">$10</a></li>
+                        <li><a href="javascript:void(0)" data-filter="$20">$20</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </form>
             </div>
+            <table id="table"></table>
         </div>
     </div>
-    <!-- modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="add">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title text-danger">添加项目 <small> 测试测试</small></h4>
+</div>
+<!-- modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="add">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-danger">添加项目 <small> 测试测试</small></h4>
+      </div>
+      <form class="form-horizontal" method="POST" action="#">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name" class="control-label col-lg-2">名称</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" name="name" placeholder="" required="true" maxlength="50">
+            </div>
           </div>
-          <form class="form-horizontal" method="POST" action="#">
-            <div class="modal-body">
-              <div class="form-group">
-                <label for="name" class="control-label col-lg-2">名称</label>
-                <div class="col-lg-10">
-                  <input type="text" class="form-control" name="name" placeholder="" required="true" maxlength="50">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="price" class="control-label col-lg-2">价格</label>
-                <div class="col-lg-10">
-                  <input type="text" class="form-control" name="price" placeholder="" required maxlength="20">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="column1" class="control-label col-lg-2">列1</label>
-                <div class="col-lg-10">
-                  <input type="text" name="column1" placeholder="" class="form-control" required maxlength="10">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="column2" class="control-label col-lg-2">列2</label>
-                <div class="col-lg-10">
-                  <input type="text" name="column2" class="form-control">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="column3" class="control-label col-lg-2">列3</label>
-                <div class="col-lg-10">
-                  <input type="text" name="column3" class="form-control">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="column4" class="control-label col-lg-2">列4</label>
-                <div class="col-lg-10">
-                  <textarea name="column4" rows="2" placeholder="备注项目信息" class="form-control" maxlength="200"></textarea>
-                </div>
-              </div>
+          <div class="form-group">
+            <label for="price" class="control-label col-lg-2">价格</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" name="price" placeholder="" required maxlength="20">
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-              <button type="submit" class="btn btn-primary">确定</button>
+          </div>
+          <div class="form-group">
+            <label for="column1" class="control-label col-lg-2">列1</label>
+            <div class="col-lg-10">
+              <input type="text" name="column1" placeholder="" class="form-control" required maxlength="10">
             </div>
-          </form>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+          </div>
+          <div class="form-group">
+            <label for="column2" class="control-label col-lg-2">列2</label>
+            <div class="col-lg-10">
+              <input type="text" name="column2" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="column3" class="control-label col-lg-2">列3</label>
+            <div class="col-lg-10">
+              <input type="text" name="column3" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="column4" class="control-label col-lg-2">列4</label>
+            <div class="col-lg-10">
+              <textarea name="column4" rows="2" placeholder="备注项目信息" class="form-control" maxlength="200"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="submit" class="btn btn-primary">确定</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
-    <!-- jQuery 3 -->
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- bootstrap-table -->
-    <script src="/bootstrap-table/dist/bootstrap-table.min.js"></script>
-    <script src="/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
-    <!-- bootstrap-table export -->
-    <script src="/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
-    <script src="/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <!-- booststrap-table editable -->
-    <script src="/bootstrap-table/dist/extensions/editable/bootstrap-table-editable.min.js"></script>
-    <script src="/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<!-- jQuery 3 -->
+<script src="/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- bootstrap-table -->
+<script src="/bootstrap-table/dist/bootstrap-table.min.js"></script>
+<script src="/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+<!-- bootstrap-table export -->
+<script src="/bootstrap-table/dist/extensions/export/bootstrap-table-export.min.js"></script>
+<script src="/tableexport.jquery.plugin/tableExport.min.js"></script>
+<!-- booststrap-table editable -->
+<script src="/bootstrap-table/dist/extensions/editable/bootstrap-table-editable.min.js"></script>
+<script src="/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
-    <script>
-      $(function(){
-        var $table = $('#table');
-        $table.bootstrapTable({
-            url: '/ajax/bootstrap-table/data',
-            classes: 'table table-hover table-bordered table-striped text-nowrap',
-            toolbar: '#toolbar',
-            queryParams: function(params){
-              return {
-                startDate: '2018/09/01',
-                endDate: '2019/09/01'
-              };
+<script>
+  $(function(){
+    var $table = $('#table');
+    $table.bootstrapTable({
+        url: '/ajax/bootstrap-table/data',
+        classes: 'table table-hover table-bordered table-striped text-nowrap',
+        toolbar: '#toolbar',
+        queryParams: function(params){
+          return {
+            startDate: '2018/09/01',
+            endDate: '2019/09/01'
+          };
+        },
+        pageNumber: 1,
+        pageSize: 10,
+        pageList: '[10, 20, 50, 100, ALL]',
+        pagination: true,
+        paginationLoopz: true,
+        search: true,
+        idField: 'name',
+        showPaginationSwitch: true,
+        showColumns: true,
+        showExport: true,
+        showRefresh: true,
+        showToggle: true,
+        detailView: true,
+        detailFormatter: function(index, row, element){
+          return 'there is something at index ' + index ;
+        },
+        columns: [{
+            field: 'id',
+            title: 'ID'
+        }, {
+            field: 'name',
+            title: 'Item Name'
+        }, {
+            field: 'price',
+            title: 'Item Price'
+        },{
+            field: 'column1',
+            title: '列1',
+            editable: {
+              url: '/ajax/bootstrap-table/edit',
+              type: 'select',
+              // value: 1,
+              source: [
+                {value: 'C 10', text: 'Default'},
+                {value: 2, text: 'Active'},
+                {value: 3, text: 'Blocked'},
+                {value: 4, text: 'Deleted'}
+              ]
             },
-            pageNumber: 1,
-            pageSize: 10,
-            pageList: '[10, 20, 50, 100, ALL]',
-            pagination: true,
-            paginationLoopz: true,
-            search: true,
-            idField: 'name',
-            showPaginationSwitch: true,
-            showColumns: true,
-            showExport: true,
-            showRefresh: true,
-            showToggle: true,
-            detailView: true,
-            detailFormatter: function(index, row, element){
-              return 'there is something at index ' + index ;
+        },{
+            field: 'column2',
+            title: '列2',
+            editable: {
+              url: '/ajax/bootstrap-table/edit',
             },
-            columns: [{
-                field: 'id',
-                title: 'ID'
-            }, {
-                field: 'name',
-                title: 'Item Name'
-            }, {
-                field: 'price',
-                title: 'Item Price'
-            },{
-                field: 'column1',
-                title: '列1',
-                editable: {
-                  url: '/ajax/bootstrap-table/edit',
-                  type: 'select',
-                  // value: 1,
-                  source: [
-                    {value: 'C 10', text: 'Default'},
-                    {value: 2, text: 'Active'},
-                    {value: 3, text: 'Blocked'},
-                    {value: 4, text: 'Deleted'}
-                  ]
-                },
-            },{
-                field: 'column2',
-                title: '列2',
-                editable: {
-                  url: '/ajax/bootstrap-table/edit',
-                },
-            },{
-                field: 'column3',
-                title: '列3',
-                editable: true,
-            },{
-                field: 'column4',
-                title: '列4',
-                editable: true,
-            },{
-                field: 'operator',
-                title: '操作',
-                align: 'center',
-                valign: 'middle',
-                width: '10%',
-                // visible: false,
-                formatter: function (value, row, index) {
-                    return '<a href="#">' +
-                        '<i class="glyphicon glyphicon-eye-open" title="显示"></i> ' +
-                        '</a>'+
-                        '<a href="#editProject" data-toggle="modal" title="修改">' +
-                        '<i class="glyphicon glyphicon-pencil"></i> ' +
-                        '</a>'+
-                        '<a href="javascript:void(0)" title="删除">' +
-                        '<i class="glyphicon glyphicon-trash text-danger"></i> ' +
-                        '</a>';
-                },
-                events: {
-                  'click a[title=删除]': function (e, value, row, index) {
-                      if(confirm('此操作不可逆，请确认是否删除？')){
-                          $.ajax();
-                      }
-                  },
-                  'click a[title=修改]': function (e, value, row, index) {
-                      // e.preventDefault();
-                      alert('click change button');
-                  },
-                }
-            }]
+        },{
+            field: 'column3',
+            title: '列3',
+            editable: true,
+        },{
+            field: 'column4',
+            title: '列4',
+            editable: true,
+        },{
+            field: 'operator',
+            title: '操作',
+            align: 'center',
+            valign: 'middle',
+            width: '10%',
+            // visible: false,
+            formatter: function (value, row, index) {
+                return '<a href="#">' +
+                    '<i class="glyphicon glyphicon-eye-open" title="显示"></i> ' +
+                    '</a>'+
+                    '<a href="#editProject" data-toggle="modal" title="修改">' +
+                    '<i class="glyphicon glyphicon-pencil"></i> ' +
+                    '</a>'+
+                    '<a href="javascript:void(0)" title="删除">' +
+                    '<i class="glyphicon glyphicon-trash text-danger"></i> ' +
+                    '</a>';
+            },
+            events: {
+              'click a[title=删除]': function (e, value, row, index) {
+                  if(confirm('此操作不可逆，请确认是否删除？')){
+                      $.ajax();
+                  }
+              },
+              'click a[title=修改]': function (e, value, row, index) {
+                  // e.preventDefault();
+                  alert('click change button');
+              },
+            }
+        }]
+    });
+    // 本地筛选
+    $('#localFilter li a').click(function(e){
+        e.preventDefault();
+        var filter = $(this).data('filter');
+        $table.bootstrapTable('resetSearch', filter);
+    });
+    // 异步筛选
+    $('#Filter').submit(function(e){
+        e.preventDefault();
+        var filter = $('input[name=filter]').val();
+        $table.bootstrapTable('refresh',{
+            query: {
+              startDate: '2001/09/01',
+              endDate: '2008/09/01',
+              filter: filter
+            }
         });
-        // 本地筛选
-        $('#localFilter li a').click(function(e){
-            e.preventDefault();
-            var filter = $(this).data('filter');
-            $table.bootstrapTable('resetSearch', filter);
-        });
-        // 异步筛选
-        $('#Filter').submit(function(e){
-            e.preventDefault();
-            var filter = $('input[name=filter]').val();
-            $table.bootstrapTable('refresh',{
-                query: {
-                  startDate: '2001/09/01',
-                  endDate: '2008/09/01',
-                  filter: filter
-                }
-            });
-        });
-      });
-    </script>
-    <% include ../layout/footer.ejs %>
-  </body>
-</html>
+    });
+  });
+</script>
+<% include ../layout/footer.ejs %>
+<% include ../layout/foot.ejs %>

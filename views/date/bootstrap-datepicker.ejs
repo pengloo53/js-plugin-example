@@ -1,64 +1,53 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-    <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <!-- custom -->
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-  </head>
-  <body>
-    <% include ../layout/header.ejs %>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <form role="form" action="#" method="POST" id="webconfig">
-            <div class="box-body">
-              <div class="row">
-                <div class="form-group col-lg-6">
-                  <label for="date" class="control-label">日期 </label>
-                  <input type="text" class="form-control date" name="date" placeholder="" autocomplete="off" required>
-                  <p class="help-block">查看官方示例：<a href="https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=false&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&keyboardNavigation=on&forceParse=on#sandbox" target="_blank">请点击</a></p>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+<% include ../layout/head.ejs %>
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 
-    <!-- jQuery 3 -->
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- bootstrap datepicker -->
-    <script src="/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
-    <script>
-      // 日期选择框
-      $('input.date').datepicker({
-        format: "yyyy/mm/dd",
-        weekStart: 7,
-        maxViewMode: 2,
-        language: "zh-CN",
-        // daysOfWeekDisabled: "0,6",
-        // daysOfWeekHighlighted: "0,6",
-        autoclose: true,
-        todayHighlight: true,
-        // startDate: new Date(),
-        // endDate: new Date()
-      }).on('show', function (e) {
-        e.preventDefault();
-        e.stopPropagation(); // 禁止触发父元素事件
-      }).on('hide', function (e) {
-        $(this).blur();
-        e.stopPropagation(); // 禁止触发父元素事件
-      });
-    </script>
-    <% include ../layout/footer.ejs %>
-  </body>
-</html>
+<% include ../layout/header.ejs %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <form role="form" action="#" method="POST" id="webconfig">
+        <div class="box-body">
+          <div class="row">
+            <div class="form-group col-lg-6">
+              <label for="date" class="control-label">日期 </label>
+              <input type="text" class="form-control date" name="date" placeholder="" autocomplete="off" required>
+              <p class="help-block">查看官方示例：<a href="https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=false&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&keyboardNavigation=on&forceParse=on#sandbox" target="_blank">请点击</a></p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery 3 -->
+<script src="/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- bootstrap datepicker -->
+<script src="/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script>
+  // 日期选择框
+  $('input.date').datepicker({
+    format: "yyyy/mm/dd",
+    weekStart: 7,
+    maxViewMode: 2,
+    language: "zh-CN",
+    // daysOfWeekDisabled: "0,6",
+    // daysOfWeekHighlighted: "0,6",
+    autoclose: true,
+    todayHighlight: true,
+    // startDate: new Date(),
+    // endDate: new Date()
+  }).on('show', function (e) {
+    e.preventDefault();
+    e.stopPropagation(); // 禁止触发父元素事件
+  }).on('hide', function (e) {
+    $(this).blur();
+    e.stopPropagation(); // 禁止触发父元素事件
+  });
+</script>
+<% include ../layout/footer.ejs %>
+<% include ../layout/foot.ejs %>

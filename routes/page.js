@@ -14,7 +14,7 @@ router.get('/', function(req, res, next){
     res.render('page', {
         url: '',
         title: '目录',
-        official_link: 'http://js.90byte.com/',
+        official_link: '/',
         doc_link: 'https://www.yuque.com/pengloo53/web'
     });
 });

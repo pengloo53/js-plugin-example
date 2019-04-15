@@ -1,248 +1,234 @@
-<!DOCTYPE html>
-<html>
+<% include ../layout/head.ejs %>
+<!-- DataTables css -->
+<link rel="stylesheet" href="/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+<link rel="stylesheet" href="/datatables.net-select-bs/css/select.bootstrap.min.css">
+<link rel="stylesheet" href="/datatables.net-responsive-bs/css/responsive.bootstrap.min.css">
 
-<head>
-  <title><%= title %></title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-  <!-- DataTables css -->
-  <link rel="stylesheet" href="/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
-  <link rel="stylesheet" href="/datatables.net-select-bs/css/select.bootstrap.min.css">
-  <link rel="stylesheet" href="/datatables.net-responsive-bs/css/responsive.bootstrap.min.css">
-  <!-- custom -->
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <% include ../layout/header.ejs %>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <table id="table" class="table table-bordered table-striped responsive nowrap display" style="width: 100%">
-          <thead>
-            <tr>
-              <th></th>
-              <th>ID</th>
-              <th>Item name</th>
-              <th>Item price</th>
-              <th>列1</th>
-              <th>列2</th>
-              <th>列3</th>
-              <th>列4</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
+<% include ../layout/header.ejs %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <table id="table" class="table table-bordered table-striped responsive nowrap display" style="width: 100%">
+        <thead>
+          <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Item name</th>
+            <th>Item price</th>
+            <th>列1</th>
+            <th>列2</th>
+            <th>列3</th>
+            <th>列4</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+      </table>
     </div>
   </div>
-  <!-- modal -->
-  <div class="modal fade" tabindex="-1" role="dialog" id="edit">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-              aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title text-danger">编辑项目 <small> 测试测试</small></h4>
+</div>
+<!-- modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="edit">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-danger">编辑项目 <small> 测试测试</small></h4>
+      </div>
+      <form class="form-horizontal" method="POST" action="#">
+        <input type="hidden" name="id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="name" class="control-label col-lg-2">名称</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" name="name" placeholder="" required="true" maxlength="50">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="control-label col-lg-2">价格</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" name="price" placeholder="" required maxlength="20">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="column1" class="control-label col-lg-2">列1</label>
+            <div class="col-lg-10">
+              <input type="text" name="column1" placeholder="" class="form-control" required maxlength="10">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="column2" class="control-label col-lg-2">列2</label>
+            <div class="col-lg-10">
+              <input type="text" name="column2" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="column3" class="control-label col-lg-2">列3</label>
+            <div class="col-lg-10">
+              <input type="text" name="column3" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="column4" class="control-label col-lg-2">列4</label>
+            <div class="col-lg-10">
+              <textarea name="column4" rows="2" placeholder="" class="form-control" maxlength="200"></textarea>
+            </div>
+          </div>
         </div>
-        <form class="form-horizontal" method="POST" action="#">
-          <input type="hidden" name="id">
-          <div class="modal-body">
-            <div class="form-group">
-              <label for="name" class="control-label col-lg-2">名称</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" name="name" placeholder="" required="true" maxlength="50">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="price" class="control-label col-lg-2">价格</label>
-              <div class="col-lg-10">
-                <input type="text" class="form-control" name="price" placeholder="" required maxlength="20">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="column1" class="control-label col-lg-2">列1</label>
-              <div class="col-lg-10">
-                <input type="text" name="column1" placeholder="" class="form-control" required maxlength="10">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="column2" class="control-label col-lg-2">列2</label>
-              <div class="col-lg-10">
-                <input type="text" name="column2" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="column3" class="control-label col-lg-2">列3</label>
-              <div class="col-lg-10">
-                <input type="text" name="column3" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="column4" class="control-label col-lg-2">列4</label>
-              <div class="col-lg-10">
-                <textarea name="column4" rows="2" placeholder="" class="form-control" maxlength="200"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-            <button type="submit" class="btn btn-primary">确定</button>
-          </div>
-        </form>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-  <!-- jQuery 3 -->
-  <script src="/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="submit" class="btn btn-primary">确定</button>
+        </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- jQuery 3 -->
+<script src="/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <!-- DataTables -->
-  <script src="/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-  <!-- DataTable buttons -->
-  <script src="/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-  <!-- buttons 打印功能 -->
-  <script src="/datatables.net-buttons/js/buttons.print.min.js"></script>
-  <!-- buttons 导出功能 -->
-  <script src="/datatables.net-buttons/js/buttons.html5.min.js"></script>
-  <script src="/jszip/dist/jszip.min.js"></script>
-  <!-- buttons 生成PDF功能 -->
-  <script src="/pdfmake/build/pdfmake.min.js"></script>
-  <script src="/pdfmake/build/vfs_fonts.js"></script>
+<!-- DataTables -->
+<script src="/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- DataTable buttons -->
+<script src="/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<!-- buttons 打印功能 -->
+<script src="/datatables.net-buttons/js/buttons.print.min.js"></script>
+<!-- buttons 导出功能 -->
+<script src="/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="/jszip/dist/jszip.min.js"></script>
+<!-- buttons 生成PDF功能 -->
+<script src="/pdfmake/build/pdfmake.min.js"></script>
+<script src="/pdfmake/build/vfs_fonts.js"></script>
 
-  <!-- datatables select  -->
-  <script src="/datatables.net-select/js/dataTables.select.min.js"></script>
-  <script src="/datatables.net-select-bs/js/select.bootstrap.min.js"></script>
+<!-- datatables select  -->
+<script src="/datatables.net-select/js/dataTables.select.min.js"></script>
+<script src="/datatables.net-select-bs/js/select.bootstrap.min.js"></script>
 
-  <!-- datatables responsive -->
-  <script src="/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="/datatables.net-responsive-bs/js/responsive.bootstrap.min.js"></script>
+<!-- datatables responsive -->
+<script src="/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/datatables.net-responsive-bs/js/responsive.bootstrap.min.js"></script>
 
-  <!-- custom -->
-  <script>
-    $(function () {
-      // datatables
-      $.fn.dataTable.ext.buttons.reload = {
-        text: '<i class="glyphicon glyphicon-refresh"></i>',
-        action: function (e, dt, node, config) {
-          dt.ajax.reload();
+<!-- custom -->
+<script>
+  $(function () {
+    // datatables
+    $.fn.dataTable.ext.buttons.reload = {
+      text: '<i class="glyphicon glyphicon-refresh"></i>',
+      action: function (e, dt, node, config) {
+        dt.ajax.reload();
+      }
+    };
+    $.fn.dataTable.ext.buttons.edit = {
+      text: '<i class="glyphicon glyphicon-pencil"></i>',
+      action: function (e, dt, node, config) {
+        var rows = dt.rows({ selected: true }); // 获取选中的行
+        var selectedCount = rows.count();       // 选中的行数量
+        var data = rows.data()[0];              // 得到行数据
+        if (selectedCount) {
+          var selectedId = data.id;
+          $('#edit').modal('show');
+          $('#edit small').html('编辑项目ID：' + selectedId);
+          $('#edit form input[name=name]').val(data.name);
+          $('#edit form input[name=price]').val(data.price);
+          $('#edit form input[name=column1]').val(data.column1);
+          $('#edit form input[name=column2]').val(data.column2);
+          $('#edit form input[name=column3]').val(data.column3);
+          $('#edit form textarea[name=column4]').val(data.column4);
+        } else {
+          alert('请选择行再操作');
         }
-      };
-      $.fn.dataTable.ext.buttons.edit = {
-        text: '<i class="glyphicon glyphicon-pencil"></i>',
-        action: function (e, dt, node, config) {
-          var rows = dt.rows({ selected: true }); // 获取选中的行
-          var selectedCount = rows.count();       // 选中的行数量
-          var data = rows.data()[0];              // 得到行数据
-          if (selectedCount) {
-            var selectedId = data.id;
-            $('#edit').modal('show');
-            $('#edit small').html('编辑项目ID：' + selectedId);
-            $('#edit form input[name=name]').val(data.name);
-            $('#edit form input[name=price]').val(data.price);
-            $('#edit form input[name=column1]').val(data.column1);
-            $('#edit form input[name=column2]').val(data.column2);
-            $('#edit form input[name=column3]').val(data.column3);
-            $('#edit form textarea[name=column4]').val(data.column4);
-          } else {
-            alert('请选择行再操作');
+      }
+    };
+    var table = $('#table').DataTable({
+      dom: '<"pull-left"B>ft<"pull-left"i>p',
+      // pagingType: "numbers",
+      // lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
+      buttons: [
+        {
+          text: '<i class="glyphicon glyphicon-copy" title="复制"></i>',
+          extend: 'copy'
+        }, {
+          text: '<i class="glyphicon glyphicon-print" title="打印"></i>',
+          extend: 'print'
+        },
+        {
+          text: '<i class="glyphicon glyphicon-save-file" title="导出excel"></i>',
+          extend: 'excel'
+        }, {
+          text: '<i class="glyphicon glyphicon-list-alt" title="导出csv"></i>',
+          extend: 'csv'
+        }, {
+          text: '<i class="glyphicon glyphicon-file" title="生成pdf"></i>',
+          extend: 'pdf'
+        }, 'reload', 'edit'
+      ],
+      ajax: {
+        url: '/ajax/datatables/data',
+        dataSrc: ''
+      },
+      columns: [
+        { "data": null, sortable: false, defaultContent: '', responsivePriority: 2 },
+        { "data": "id" },
+        { "data": "name", responsivePriority: 1 },
+        { "data": "price", responsivePriority: 3 },
+        { "data": "column1" },
+        { 'data': "column2" },
+        { "data": "column3" },
+        { "data": "column4" },
+        { "data": null, defaultContent: '', responsivePriority: 4 }
+      ],
+      columnDefs: [
+        {
+          targets: -1,
+          // visible: false,
+          sortable: false,
+          render: function (data, type, row) {
+            return '<a href="#" title="详情">' +
+              '<i class="glyphicon glyphicon-eye-open"></i> ' +
+              '</a>' +
+              '<a href="#editProject" data-toggle="modal" data-id="' + row.p_id + '" title="修改">' +
+              '<i class="glyphicon glyphicon-pencil"></i> ' +
+              '</a>' +
+              '<a href="#delProject" data-toggle="modal" data-id="' + row.p_id + '" title="删除">' +
+              '<i class="glyphicon glyphicon-trash text-danger"></i> ' +
+              '</a>';
           }
         }
-      };
-      var table = $('#table').DataTable({
-        dom: '<"pull-left"B>ft<"pull-left"i>p',
-        // pagingType: "numbers",
-        // lengthMenu: [[10, 20, 50, -1], [10, 20, 50, "All"]],
-        buttons: [
-          {
-            text: '<i class="glyphicon glyphicon-copy" title="复制"></i>',
-            extend: 'copy'
-          }, {
-            text: '<i class="glyphicon glyphicon-print" title="打印"></i>',
-            extend: 'print'
-          },
-          {
-            text: '<i class="glyphicon glyphicon-save-file" title="导出excel"></i>',
-            extend: 'excel'
-          }, {
-            text: '<i class="glyphicon glyphicon-list-alt" title="导出csv"></i>',
-            extend: 'csv'
-          }, {
-            text: '<i class="glyphicon glyphicon-file" title="生成pdf"></i>',
-            extend: 'pdf'
-          }, 'reload', 'edit'
-        ],
-        ajax: {
-          url: '/ajax/datatables/data',
-          dataSrc: ''
-        },
-        columns: [
-          { "data": null, sortable: false, defaultContent: '', responsivePriority: 2 },
-          { "data": "id" },
-          { "data": "name", responsivePriority: 1 },
-          { "data": "price", responsivePriority: 3 },
-          { "data": "column1" },
-          { 'data': "column2" },
-          { "data": "column3" },
-          { "data": "column4" },
-          { "data": null, defaultContent: '', responsivePriority: 4 }
-        ],
-        columnDefs: [
-          {
-            targets: -1,
-            // visible: false,
-            sortable: false,
-            render: function (data, type, row) {
-              return '<a href="#" title="详情">' +
-                '<i class="glyphicon glyphicon-eye-open"></i> ' +
-                '</a>' +
-                '<a href="#editProject" data-toggle="modal" data-id="' + row.p_id + '" title="修改">' +
-                '<i class="glyphicon glyphicon-pencil"></i> ' +
-                '</a>' +
-                '<a href="#delProject" data-toggle="modal" data-id="' + row.p_id + '" title="删除">' +
-                '<i class="glyphicon glyphicon-trash text-danger"></i> ' +
-                '</a>';
-            }
-          }
-        ],
-        order: [[2, "asc"]],
-        select: {
-          selector: 'td:not(:first-child):not(:last-child) ',
-          style: 'single'
-        },
-        language: {
-          url: '/json/Chinese.json'
-        }
-      });
-
-      // 操作区使用：编辑modal
-      $('#editProject').on('show.bs.modal', function (e) {
-        var button = $(e.relatedTarget);
-        var id = button.data('id');
-        $.ajax();   // 编辑操作
-      });
-      // 操作区使用：删除modal
-      $('#delProject').on('show.bs.modal', function (e) {
-        var button = $(e.relatedTarget);
-        var id = button.data('id');
-        $.ajax();   // 删除操作
-      });
-
-      // data 前台筛选
-      $('#localFilter li a').click(function (e) {
-        e.preventDefault();
-        var filter = $(this).data('filter');
-        table.search(filter).draw();
-      });
+      ],
+      order: [[2, "asc"]],
+      select: {
+        selector: 'td:not(:first-child):not(:last-child) ',
+        style: 'single'
+      },
+      language: {
+        url: '/json/Chinese.json'
+      }
     });
-  </script>
-  <% include ../layout/footer.ejs %>
-</body>
 
-</html>
+    // 操作区使用：编辑modal
+    $('#editProject').on('show.bs.modal', function (e) {
+      var button = $(e.relatedTarget);
+      var id = button.data('id');
+      $.ajax();   // 编辑操作
+    });
+    // 操作区使用：删除modal
+    $('#delProject').on('show.bs.modal', function (e) {
+      var button = $(e.relatedTarget);
+      var id = button.data('id');
+      $.ajax();   // 删除操作
+    });
+
+    // data 前台筛选
+    $('#localFilter li a').click(function (e) {
+      e.preventDefault();
+      var filter = $(this).data('filter');
+      table.search(filter).draw();
+    });
+  });
+</script>
+<% include ../layout/footer.ejs %>
+<% include ../layout/foot.ejs %>

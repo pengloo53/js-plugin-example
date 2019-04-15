@@ -1,6 +1,10 @@
 module.exports = function (app) {
-    app.get(function (req, res, next) {
-        res.locals.web = 'JS 插件在线演示';
+    app.use(function (req, res, next) {
+        res.locals.web = {
+            title: 'JS 插件在线演示',
+            authod_twitter: 'https://twitter.com/pengloo53',
+            authod_weibo: 'https://weibo.com/pengloo53'
+        };
         next();
     });
 
