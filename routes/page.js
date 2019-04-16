@@ -168,5 +168,14 @@ router.get('/bootstrap-fileinput', function (req, res, next) {
         doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-fileinput"
     });
 });
+// x-editable
+router.get('/x-editable', function (req, res, next) {
+    res.render("jquery/x-editable", {
+        url: "jquery",
+        title: "x-editable",
+        official_link: "http://vitalets.github.io/x-editable/index.html",
+        doc_link: "https://www.yuque.com/pengloo53/web/x-editable"
+    });
+});
 
 module.exports = router;

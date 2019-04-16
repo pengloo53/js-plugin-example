@@ -1,0 +1,39 @@
+<% include ../layout/head.ejs %>
+<!-- x-editable -->
+<link rel="stylesheet" href="/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css">
+
+<% include ../layout/header.ejs %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <ul class="list-group">
+        <li class="list-group-item"><span class="badge">text</span>用户名：<a href="#" class="text" data-type="text" data-pk="1" data-title="修改用户名">lupeng</a></li>
+        <li class="list-group-item"><span class="badge">textarea</span>备注：<a href="#" class="textare" data-type="textarea" data-pk="1" data-title="修改备注">lupeng</a></li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery 3 -->
+<!-- <script src="/jquery/dist/jquery.js"></script> -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<!-- Bootstrap 3.3.7 -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- x-editable -->
+<srcipt src="/x-editable/dist/bootstrap-editable/js/bootstrap-editable.js"></srcipt>
+
+<script>
+  $(function () {
+    $('a.text').editable({
+      url: "/x-editable/post"
+    });
+    $('a.textare').editable({
+      url: '/x-editable/post'
+    });
+  });
+</script>
+<% include ../layout/footer.ejs %>
+<% include ../layout/foot.ejs %>

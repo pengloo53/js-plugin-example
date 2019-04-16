@@ -233,4 +233,9 @@ router.get('/bootstrap3-typeahead/data', function(req, res, next){
     res.send(data);
 });
 
+// x-editable
+router.post('/x-editable/post', function(req, res, next){
+    res.send({message: 'OK'});
+});
+
 module.exports = router;
