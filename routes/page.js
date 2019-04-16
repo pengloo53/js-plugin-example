@@ -178,4 +178,13 @@ router.get('/x-editable', function (req, res, next) {
     });
 });
 
+// sweetalert2
+router.get('/sweetalert2', function(req, res, next){
+    res.render('jquery/sweetalert2', {
+        url: 'jquery',
+        title: 'sweetalert2',
+        official_link: 'http://www.htmleaf.com/Demo/201606123590.html',
+        doc_link: 'https://www.yuque.com/pengloo53/web/sweetalert2'
+    });
+});
 module.exports = router;

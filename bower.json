@@ -33,6 +33,7 @@
     "bootstrap-datepicker": "^1.8.0",
     "bootstrap3-typeahead": "^4.0.2",
     "bootstrap-fileinput": "^5.0.1",
-    "github-fork-ribbon-css": "^0.2.2"
+    "github-fork-ribbon-css": "^0.2.2",
+    "sweetalert2": "^7.32.0"
   }
 }
