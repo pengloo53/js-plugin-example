@@ -17,43 +17,41 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="dropdown <%= url=='table'?'active':'' %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">表格插件 <span class="caret"></span></a>
+              <li class="dropdown <%= url=='jquery'?'active':'' %>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery 专区 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <!-- <li><a href="#">Action</a></li> -->
-                  <li class="disabled"><a href="javascript:void(0)">在线表格</a></li>
+                  <li class="disabled"><a href="javascript:void(0)">表格相关</a></li>
                   <li class=""><a href="/page/bootstrap-table">bootstrap-table</a></li>
                   <li class=""><a href="/page/datatables">datatables</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">表格辅助</a></li>
                   <li class=""><a href="/page/jquery-tabledit">jquery-tabledit</a></li>
-                </ul>
-              </li>
-              <li class="dropdown <%= url=='date'?'active':'' %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">日期插件 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
+                  <li role="separator" class="divider"></li>
                   <li class="disabled"><a href="javascript:void(0)">日期选择</a></li>
                   <li class=""><a href="/page/bootstrap-datepicker">bootstrap-datepicker</a></li>
                   <li class=""><a href="/page/daterangepicker">daterangepicker</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">日期库</a></li>
-                  <li class=""><a href="http://momentjs.com/" target="_blank">moment <span class="label label-warning pull-right"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
-                  <!-- <li class=""><a href="/page/"></a></li> -->
-                </ul>
-              </li>
-              <li class="dropdown <%= url=='jquery'?'active':'' %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <!-- <li><a href="#">Action</a></li> -->
                   <li class="disabled"><a href="javascript:void(0)">校验</a></li>
                   <li class=""><a href="/page/jquery-validation">jquery-validation</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">输入增强</a></li>
+                  <li class="disabled"><a href="javascript:void(0)">增强</a></li>
                   <li class=""><a href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a></li>
-                  <li class=""><a href="/page/x-editable">x-editable</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">文件上传</a></li>
                   <li class=""><a href="/page/bootstrap-fileinput">bootstrap-fileinput</a></li>
+                  <li class=""><a href="/page/x-editable">x-editable</a></li>
+                </ul>
+              </li>
+              <li class="dropdown <%= url=='original'?'active':'' %>">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">原生专区 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <!-- <li><a href="#">Action</a></li> -->
+                  <li class="disabled"><a href="javascript:void(0)">库</a></li>
+                  <li class=""><a href="http://momentjs.com/" target="_blank">moment <span class="text-danger" title="跳到官方"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
+                  <li><a href="https://blueimp.github.io/JavaScript-MD5/">js-md5 <span class="text-danger" title="跳到官方"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="disabled"><a href="javascript:void(0)">增强</a></li>
+                  <li class=""><a href="/page/sweetalert2">sweetalert2</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="disabled"><a href="javascript:void(0)">图表</a></li>
+                  <li class=""><a href="/page/echarts">echarts</a></li>
                 </ul>
               </li>
               <li class="dropdown <%= url=='vue'?'active':'' %>">

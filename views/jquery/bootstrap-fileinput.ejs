@@ -5,13 +5,13 @@
 <% include ../layout/header.ejs %>
 <div class="container">
   <div class="row">
-    <div class="form-group col-lg-9">
+    <div class="form-group col-lg-8">
       <label for="" class="control-label">默认样式</label>
       <input type="file" name="file" id="file1" multiple>
     </div>
   </div>
   <div class="row">
-    <div class="form-group col-lg-9">
+    <div class="form-group col-lg-8">
       <label for="" class="control-label">插件样式</label>
       <input type="file" name="file" id="file" multiple>
     </div>
@@ -35,7 +35,7 @@
       // showCaption: false,      // 是否显示 input 样式
       // showPreview: false,      // 是否显示预览
       // showUpload: false,       // 选择文件后，是否显示上传按钮
-      // maxFileSize: 10,         // 允许最大的文件大小，单位默认为 KB
+      maxFileSize: 10000,         // 允许最大的文件大小，单位默认为 KB
       // maxFileCount: 5,         // 允许的文件数量，需要在 input 标签上加 multiple 属性
       // initialCaption: '',      // 自定义 input 内默认文字
       // dropZoneTitle: '',       // 预览框文本自定义

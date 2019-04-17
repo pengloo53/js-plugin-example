@@ -5,10 +5,6 @@
 var express = require("express");
 var router = express.Router();
 
-/**
- *  Table
- */
-
 // page 首页
 router.get('/', function(req, res, next){
     res.render('page', {
@@ -19,10 +15,14 @@ router.get('/', function(req, res, next){
     });
 });
 
+/**
+ *  jQuery
+ */
+
 // bootstrap-table
 router.get("/bootstrap-table", function(req, res, next) {
-    res.render("table/bootstrap-table", {
-        url: "table",
+    res.render("jquery/bootstrap-table", {
+        url: "jquery",
         title: "bootstrap-table",
         official_link: "https://bootstrap-table.com/",
         doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-table"
@@ -31,8 +31,8 @@ router.get("/bootstrap-table", function(req, res, next) {
 
 // datatables
 router.get("/datatables", function (req, res, next) {
-    res.render("table/datatables", {
-        url: "table",
+    res.render("jquery/datatables", {
+        url: "jquery",
         title: "datatables",
         official_link: "https://datatables.net/",
         doc_link: "https://www.yuque.com/pengloo53/web/datatables"
@@ -41,8 +41,8 @@ router.get("/datatables", function (req, res, next) {
 
 // jquery-tabledit
 router.get("/jquery-tabledit", function (req, res, next) {
-    res.render("table/jquery-tabledit", {
-        url: "table",
+    res.render("jquery/jquery-tabledit", {
+        url: "jquery",
         title: "jquery-tabledit",
         official_link: "http://markcell.github.io/jquery-tabledit/",
         doc_link: "https://www.yuque.com/pengloo53/web/jquery-tabledit",
@@ -115,13 +115,11 @@ router.get("/jquery-tabledit", function (req, res, next) {
     });
 });
 
-/**
- *  Date
- */
+
 // bootstrap-datepicker
 router.get("/bootstrap-datepicker", function (req, res, next) {
-    res.render("date/bootstrap-datepicker", {
-        url: "date",
+    res.render("jquery/bootstrap-datepicker", {
+        url: "jquery",
         title: "bootstrap-datepicker",
         official_link: "https://bootstrap-datepicker.readthedocs.io/en/latest/",
         doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-datepicker"
@@ -130,17 +128,14 @@ router.get("/bootstrap-datepicker", function (req, res, next) {
 
 // daterangepicker
 router.get("/daterangepicker", function (req, res, next) {
-    res.render("date/daterangepicker", {
-        url: "date",
+    res.render("jquery/daterangepicker", {
+        url: "jquery",
         title: "daterangepicker",
         official_link: "http://www.daterangepicker.com/#example2",
         doc_link: "https://www.yuque.com/pengloo53/web/daterangepicker"
     });
 });
 
-/**
- *  jQuery
- */
 // jquery-validation
 router.get("/jquery-validation", function(req, res, next) {
     res.render("jquery/jquery-validation.ejs", {
@@ -178,13 +173,43 @@ router.get('/x-editable', function (req, res, next) {
     });
 });
 
+/**
+ *  原生
+ */
+
 // sweetalert2
 router.get('/sweetalert2', function(req, res, next){
-    res.render('jquery/sweetalert2', {
-        url: 'jquery',
+    res.render('original/sweetalert2', {
+        url: 'original',
         title: 'sweetalert2',
         official_link: 'http://www.htmleaf.com/Demo/201606123590.html',
         doc_link: 'https://www.yuque.com/pengloo53/web/sweetalert2'
+    });
+});
+
+router.get('/js-md5', function(req, res, next){
+    res.render('original/js-md5', {
+        url: 'original',
+        title: 'js-md5',
+        official_link: '',
+        doc_link: 'https://www.yuque.com/pengloo53/web/js-md5'
+    });
+});
+
+router.get('/moment', function(req, res, next){
+    res.render('original/moment', {
+        url: 'original',
+        title: 'moment',
+        official_link: '',
+        doc_link: 'https://www.yuque.com/pengloo53/web/moment'
+    });
+});
+router.get('/echarts', function(req, res, next){
+    res.render('original/echarts', {
+        url: 'original',
+        title: 'echarts',
+        official_link: '',
+        doc_link: 'https://www.yuque.com/pengloo53/web/echarts'
     });
 });
 module.exports = router;
