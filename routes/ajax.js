@@ -237,5 +237,14 @@ router.get('/bootstrap3-typeahead/data', function(req, res, next){
 router.post('/x-editable/post', function(req, res, next){
     res.send({message: 'OK'});
 });
+// x-editable remote data
+router.get('/x-editable/remote-data', function(req, res, next){
+    res.send([
+        { value: '', text: '请选择' },
+        { value: 'beijing', text: '北京' },
+        { value: 'shagnhai', text: '上海' },
+        { value: 'zhuangdong', text: '广东' }
+    ]);
+});
 
 module.exports = router;

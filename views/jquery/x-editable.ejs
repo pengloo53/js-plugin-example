@@ -7,11 +7,21 @@
   <div class="row">
     <div class="col-lg-6">
       <ul class="list-group">
-        <li class="list-group-item"><span class="badge">text</span>用户名：<a href="#" class="text" data-type="text" data-pk="1" data-title="修改用户名">lupeng</a></li>
-        <li class="list-group-item"><span class="badge">textarea</span>备注：<a href="#" class="textarea" data-type="textarea" data-pk="1" data-title="修改备注">lupeng</a></li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item"><span class="badge">text</span>姓名：
+          <a href="#" class="text" data-type="text" data-pk="1" data-title="修改用户名" data-name="name">lupeng</a>
+        </li>
+        <li class="list-group-item"><span class="badge">select</span>性别：
+          <a href="#" class="select" data-type="select" data-pk="1" data-title="选择" data-name="gender">请选择</a>
+        </li>
+        <li class="list-group-item"><span class="badge">remote select</span>当前所在城市：
+          <a href="#" class="selectR" data-type="select" data-pk="1" data-title="选择城市" data-name="city">请选择</a>
+        </li>
+        <li class="list-group-item"><span class="badge">combodate</span>来到该城市的年月：
+          <a href="#" data-type="combodate" data-pk="1" data-value="2014/05" id="enter_date"></a>
+        </li>
+        <li class="list-group-item"><span class="badge">textarea</span>备注：
+          <a href="#" id="bz" data-type="textarea" data-pk="1" data-rows="2"></a>
+        </li>
       </ul>
     </div>
   </div>
@@ -21,20 +31,46 @@
 <script src="/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- moment -->
+<script src="/moment/min/moment.min.js"></script>
 <!-- x-editable -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 
 <script>
   $(function () {
+    // 文本框
     $('a.text').editable({
-      url: '/post',
-      type: 'text',
-      pk: 1,
-      name: 'username',
-      title: 'Enter username'
+      url: '/ajax/x-editable/post'
     });
-    $('a.textarea').editable({
-      url: '/x-editable/post'
+    // 选择框
+    $('a.select').editable({
+      url: '/ajax/x-editable/post',
+      source: [
+        { value: '', text: '请选择' },
+        { value: '男', text: '男' },
+        { value: '女', text: '女' }
+      ]
+    });
+    // 远程选择
+    $('a.selectR').editable({
+      url: '/ajax/x-editable/post',
+      source: '/ajax/x-editable/remote-data'
+    });
+    // combodate
+    $('#enter_date').editable({
+      url: '/ajax/x-editable/post',
+      format: 'YYYY-MM-DD',
+      viewformat: 'YYYY/MM/DD',
+      template: 'YYYY MM DD',
+      combodate: {
+        minYear: 2000,
+        maxYear: moment().format('YYYY'),
+        minuteStep: 2
+      }
+    });
+    // textare
+    $('#bz').editable({
+      url: '/ajax/x-editable/post'
     });
   });
 </script>
