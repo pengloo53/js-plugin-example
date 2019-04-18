@@ -10,9 +10,7 @@ module.exports = function (app) {
 
     // index
     app.get('/', function (req, res, next) {
-        res.render('index', {
-            title: 'JS 插件在线演示'
-        });
+        res.redirect('/page');
     });
 
     // page
@@ -21,8 +19,3 @@ module.exports = function (app) {
     // ajax request
     app.use('/ajax', require('./ajax.js'));
 };
-
-
-
-
-
