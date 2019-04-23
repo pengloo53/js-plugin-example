@@ -205,20 +205,20 @@ router.get('/js-md5', function(req, res, next){
     });
 });
 
-router.get('/moment', function(req, res, next){
-    res.render('original/moment', {
-        url: 'original',
-        title: 'moment',
-        official_link: '',
-        doc_link: 'https://www.yuque.com/pengloo53/web/moment'
-    });
-});
-router.get('/echarts', function(req, res, next){
-    res.render('original/echarts', {
-        url: 'original',
-        title: 'echarts',
-        official_link: '',
-        doc_link: 'https://www.yuque.com/pengloo53/web/echarts'
-    });
-});
+// router.get('/chartjs', function(req, res, next){
+//     res.render('original/moment', {
+//         url: 'original',
+//         title: 'moment',
+//         official_link: '',
+//         doc_link: 'https://www.yuque.com/pengloo53/web/moment'
+//     });
+// });
+// router.get('/echarts', function(req, res, next){
+//     res.render('original/echarts', {
+//         url: 'original',
+//         title: 'echarts',
+//         official_link: '',
+//         doc_link: 'https://www.yuque.com/pengloo53/web/echarts'
+//     });
+// });
 module.exports = router;

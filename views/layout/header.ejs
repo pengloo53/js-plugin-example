@@ -3,86 +3,90 @@
 <div class="layout-header">
   <nav class="navbar navbar-default">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/page">js-plugin-example</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="dropdown <%= url=='jquery'?'active':'' %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery 专区 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <!-- <li><a href="#">Action</a></li> -->
-                  <li class="disabled"><a href="javascript:void(0)">表格相关</a></li>
-                  <li class=""><a href="/page/bootstrap-table">bootstrap-table</a></li>
-                  <li class=""><a href="/page/datatables">datatables</a></li>
-                  <li class=""><a href="/page/jquery-tabledit">jquery-tabledit</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">日期选择</a></li>
-                  <li class=""><a href="/page/bootstrap-datepicker">bootstrap-datepicker</a></li>
-                  <li class=""><a href="/page/daterangepicker">daterangepicker</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">校验</a></li>
-                  <li class=""><a href="/page/jquery-validation">jquery-validation</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">输入增强</a></li>
-                  <li class=""><a href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">上传增强</a></li>
-                  <li class=""><a href="/page/bootstrap-fileinput">bootstrap-fileinput</a></li>
-                  <li class=""><a href="/page/dropify">dropify</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">编辑增强</a></li>
-                  <li class=""><a href="/page/x-editable">x-editable</a></li>
-                </ul>
-              </li>
-              <li class="dropdown <%= url=='original'?'active':'' %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">原生专区 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <!-- <li><a href="#">Action</a></li> -->
-                  <li class="disabled"><a href="javascript:void(0)">库</a></li>
-                  <li class=""><a href="https://www.yuque.com/pengloo53/web/moment" target="_blank">moment <span class="text-danger" title="跳到官方"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
-                  <li><a href="https://www.yuque.com/pengloo53/web/js-md5">js-md5 <span class="text-danger" title="跳到官方"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">增强</a></li>
-                  <li class=""><a href="/page/sweetalert2">sweetalert2</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="disabled"><a href="javascript:void(0)">图表</a></li>
-                  <!-- <li class=""><a href="/page/echarts">echarts</a></li> -->
-                </ul>
-              </li>
-              <li class="dropdown <%= url=='vue'?'active':'' %>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vue 专区
-                  <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <!-- <li><a href="#">Action</a></li> -->
-                  <li class="disabled"><a href="javascript:void(0)">敬请期待...</a></li>
-                  <!-- <li class=""><a href="/page/jquery-validation">jquery-validation</a></li> -->
-                  <!-- <li class="disabled"><a href="javascript:void(0)">bootstrap-validate</a></li> -->
-                  <!-- <li role="separator" class="divider"></li> -->
-                  <!-- <li class="disabled"><a href="javascript:void(0)">校验</a></li> -->
-                  <!-- <li class=""><a href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a></li> -->
-                </ul>
-              </li>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/page">js-plugin-example</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown <%= url=='jquery'?'active':'' %>">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">jQuery 专区 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#">Action</a></li> -->
+              <li class="disabled"><a href="javascript:void(0)">表格相关</a></li>
+              <li class=""><a href="/page/bootstrap-table">bootstrap-table</a></li>
+              <li class=""><a href="/page/datatables">datatables</a></li>
+              <li class=""><a href="/page/jquery-tabledit">jquery-tabledit</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">日期选择</a></li>
+              <li class=""><a href="/page/bootstrap-datepicker">bootstrap-datepicker</a></li>
+              <li class=""><a href="/page/daterangepicker">daterangepicker</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">校验</a></li>
+              <li class=""><a href="/page/jquery-validation">jquery-validation</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">输入增强</a></li>
+              <li class=""><a href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a></li>
+              <li class=""><a href="/page/bootstrap-tagsinput">bootstrap-tagsinput</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">上传增强</a></li>
+              <li class=""><a href="/page/bootstrap-fileinput">bootstrap-fileinput</a></li>
+              <li class=""><a href="/page/dropify">dropify</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">选择增强</a></li>
+              <li class=""><a href="/page/bootstrap-switch">bootstrap-switch</a></li>
+              <li class=""><a href="/page/bootstrap-star-ration">bootstrap-star-ration</a></li>
+              <li class=""><a href="/page/select2">select2</a></li>
+              <li class=""><a href="/page/icheck">iCheck</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">编辑增强</a></li>
+              <li class=""><a href="/page/x-editable">x-editable</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
+          </li>
+          <li class="dropdown <%= url=='original'?'active':'' %>">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">原生专区 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#">Action</a></li> -->
+              <li class="disabled"><a href="javascript:void(0)">库</a></li>
+              <li class=""><a href="https://www.yuque.com/pengloo53/web/moment" target="_blank">moment <span class="text-danger" title="跳到官方"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
+              <li><a href="https://www.yuque.com/pengloo53/web/js-md5">js-md5 <span class="text-danger" title="跳到官方"><i class="glyphicon glyphicon-share-alt"></i></span></a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">增强</a></li>
+              <li class=""><a href="/page/sweetalert2">sweetalert2</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="disabled"><a href="javascript:void(0)">图表</a></li>
+              <li class=""><a href="/page/chartjs">chart.js</a></li>
+              <li class=""><a href="/page/echarts">echarts</a></li>
+            </ul>
+          </li>
+          <li class="dropdown <%= url=='vue'?'active':'' %>">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vue 专区
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- <li><a href="#">Action</a></li> -->
+              <li class="disabled"><a href="javascript:void(0)">敬请期待...</a></li>
+              <!-- <li class=""><a href="/page/jquery-validation">jquery-validation</a></li> -->
+              <!-- <li class="disabled"><a href="javascript:void(0)">bootstrap-validate</a></li> -->
+              <!-- <li role="separator" class="divider"></li> -->
+              <!-- <li class="disabled"><a href="javascript:void(0)">校验</a></li> -->
+              <!-- <li class=""><a href="/page/bootstrap3-typeahead">bootstrap3-typeahead</a></li> -->
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class=""><a target="_blank" href="https://www.yuque.com/pengloo53/web"><i class="glyphicon glyphicon-book"></i> 文档库</a></li>
+          <li class=""><a target="_blank" href="https://github.com/pengloo53/js-plugin-example/issues/new"><i class="glyphicon glyphicon glyphicon-question-sign"></i> 提 issue</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
   </nav>
-</div>
-<div class="container">
-  <h3 style="margin-top:0;margin-bottom:20px"><%= title %>
-    <% if(url){ %>
-    <small><a class="label label-warning" href="<%= official_link %>" target="_blank">官方地址</a></small>
-    <% } %>
-    <small><a class="label label-success" href="<%= doc_link %>" target="_blank">文档库地址</a></small>
-  </h3>
 </div>
 <a class="github-fork-ribbon" href="https://github.com/pengloo53/js-plugin-example" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
