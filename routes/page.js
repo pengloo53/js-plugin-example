@@ -163,6 +163,15 @@ router.get('/bootstrap-fileinput', function (req, res, next) {
         doc_link: "https://www.yuque.com/pengloo53/web/bootstrap-fileinput"
     });
 });
+// dropify
+router.get('/dropify', function(req, res, next){
+    res.render("jquery/dropify", {
+        url: "jquery",
+        title: "dropify",
+        official_link: "http://jeremyfagis.github.io/dropify/",
+        doc_link: "https://www.yuque.com/pengloo53/web/dropify"
+    });
+});
 // x-editable
 router.get('/x-editable', function (req, res, next) {
     res.render("jquery/x-editable", {

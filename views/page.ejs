@@ -4,24 +4,111 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4">
-      <div class="panel panel-danger">
-        <div class="panel-heading">jQuery 专区</div>
-        <div class="panel-body">
-          包含基于 jQuery & bootstrap 的插件，jQuery 版本为 3.4.0，bootstrap 版本为 3.3.7
-          <br/>注意：bootstrap5 将移除对 jQuery 的依赖。
+      <div class="panel-group" id="jquery" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-danger">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                jQuery 专区 <span class="badge pull-right">10</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                站点主题样式为 bootstrap <br/>
+                jQuery 版本为 <b>3.4.0</b>，bootstrap 版本为 <b>3.3.7</b>
+                <br/>注意：bootstrap5 将移除对 jQuery 的依赖。  
+            </div>
+          </div>
         </div>
-        <ul class="list-group">
-          <a class="list-group-item" href="/page/bootstrap-table">bootstrap-table<span class="badge">在线表格</span></a>
-          <a class="list-group-item" href="/page/datatables">datatables<span class="badge">在线表格</span></a>
-          <a class="list-group-item" href="/page/jquery-tabledit">jquery-tabledit<span class="badge">表格辅助</span></a>
-          <a class="list-group-item" href="/page/bootstrap-datepicker">bootstrap-datepicker<span class="badge">日期选择</span></a>
-          <a class="list-group-item" href="/page/daterangepicker">daterangepicker<span class="badge">日期选择</span></a>
-          <a class="list-group-item" href="/page/jquery-validation">jquery-validation<span class="badge">表单校验</span></a>
-          <a class="list-group-item" href="/page/bootstrap3-typeahead">bootstrap3-typeahead<span class="badge">输入增强</span></a>
-          <a class="list-group-item" href="/page/bootstrap-fileinput">bootstrap-fileinput<span class="badge">上传增强</span></a>
-          <a class="list-group-item" href="/page/x-editable">x-editable<span class="badge">编辑增强</span></a>
-        </ul>
-        <div class="panel-footer">期待更多...</div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                表格相关 <span class="badge pull-right">3</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <ul class="list-group">
+              <a class="list-group-item" href="/page/bootstrap-table">bootstrap-table<span class="badge">在线表格</span></a>
+              <a class="list-group-item" href="/page/datatables">datatables<span class="badge">在线表格</span></a>
+              <a class="list-group-item" href="/page/jquery-tabledit">jquery-tabledit<span class="badge">表格辅助</span></a>
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                日期选择 <span class="badge pull-right">2</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <ul class="list-group">
+              <a class="list-group-item" href="/page/bootstrap-datepicker">bootstrap-datepicker<span class="badge">单选</span></a>
+              <a class="list-group-item" href="/page/daterangepicker">daterangepicker<span class="badge">区间选择</span></a>
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingFour">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                表单校验 <span class="badge pull-right">1</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <ul class="list-group">
+              <a class="list-group-item" href="/page/jquery-validation">jquery-validation<span class="badge"></span></a>  
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingFive">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                上传增强 <span class="badge pull-right">2</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+            <ul class="list-group">
+              <a class="list-group-item" href="/page/bootstrap-fileinput">bootstrap-fileinput<span class="badge">上传增强</span></a>
+              <a class="list-group-item" href="/page/dropify">dropify<span class="badge">上传增强</span></a>
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingSix">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                输入增强 <span class="badge pull-right">1</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+            <ul class="list-group">
+              <a class="list-group-item" href="/page/bootstrap3-typeahead">bootstrap3-typeahead<span class="badge">输入增强</span></a>
+            </ul>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingSeven">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                编辑增强 <span class="badge pull-right">1</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+            <ul class="list-group">
+              <a class="list-group-item" href="/page/x-editable">x-editable<span class="badge">文本编辑</span></a>  
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-lg-4">

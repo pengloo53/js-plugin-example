@@ -1,0 +1,57 @@
+<% include ../layout/head.ejs %>
+<!-- dropify -->
+<link rel="stylesheet" href="/dropify/dist/css/dropify.min.css">
+
+<% include ../layout/header.ejs %>
+<div class="container">
+  <div class="row">
+    <div class="form-group col-lg-8">
+      <label for="" class="control-label">默认样式</label>
+      <input type="file" name="file" id="file1" multiple>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-lg-8">
+      <label for="" class="control-label">插件样式</label>
+      <input type="file" name="file" id="file" multiple>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery 3 -->
+<script src="/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- dropify -->
+<script src="/dropify/dist/js/dropify.min.js"></script>
+
+<script>
+  $(function () {
+    $('#file').dropify({
+      // height: '500',
+      maxFileSizePreview: '5M',
+      minWidth: '200',
+      // errorsPosition: 'outside',
+      allowedFileExtensions: 'pdf png jpg',
+      allowedFormats: 'portrait',
+      messages: {
+        'default': 'Drag and drop a file here or click',
+        'replace': 'Drag and drop or click to replace',
+        'remove':  '移除',
+        'error':   'Ooops, something wrong happended.'
+      },
+      tpl: {
+        wrap:            '<div class="dropify-wrapper"></div>',
+        loader:          '<div class="dropify-loader"></div>',
+        message:         '<div class="dropify-message"><span class="file-icon" /> <p>{{ default }}</p></div>',
+        preview:         '<div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message">{{ replace }}</p></div></div></div>',
+        filename:        '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
+        clearButton:     '<button type="button" class="dropify-clear">{{ remove }}</button>',
+        errorLine:       '<p class="dropify-error">{{ error }}</p>',
+        errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
+      }
+    });
+  });
+</script>
+<% include ../layout/footer.ejs %>
+<% include ../layout/foot.ejs %>
